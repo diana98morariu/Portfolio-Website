@@ -1,0 +1,219 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: menufont;
+    src:url(trench100free.ttf);
+}
+.texts {
+    position: relative;
+    font-family: menufont, arial, sans-serif;
+    color: white;
+}
+.texts a {
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 20px;
+    color: white;
+}
+.texts a:hover {
+    color: aquamarine;
+}
+.texts::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* navigation */
+nav a:hover {
+    color: aquamarine;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: menufont, arial, sans-serif;
+    font-size: 30px;
+}
+nav {
+    max-height: 0;
+    overflow: hidden;
+}
+.logo img {
+    width:50px;
+    height: 50px;
+    margin-top: 15px;
+    margin-right:  25px;
+}
+nav ul {
+    list-style-type: none;
+    width: 4fr;
+}
+    input {
+    display: none;
+    }
+label {
+    cursor: pointer;
+    font-size: 50px;
+    color: white;
+}
+input:checked ~ nav {
+    max-height: 500px;
+}
+
+
+body {
+    background-image: url(background-phone-blur.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nav lg"
+}
+.navigation {
+    grid-area: nav;
+    margin-bottom: 30px;
+}
+.logo {
+    grid-area: lg;
+}
+
+.texts {
+    grid-area: tx;
+    margin-bottom: 20px;
+}
+.photo {
+    grid-area: ph;
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 80%;
+}
+.texts h1 {
+    font-size: 35px;
+}
+.texts h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration:1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+/* footer */
+.copy h1 {
+        color: white;
+        font-size: 17px;
+        font-family:monospace;
+    }
+
+/*desktop + tableta*/
+
+@media all and (min-width:850px){
+    nav {
+        max-height: 5em;
+    }
+    nav li
+    {
+        display:inline-block;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+    nav ul{
+        width: 4fr;
+        margin-left: 100px;
+    }
+    label {
+        display: none;
+    }
+    body {
+        background-image: url(background-blur.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        background-attachment: fixed;
+    }
+    header {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nav lg"
+    }
+    article {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "tx ph"
+            "tx ph"
+            "tx ph"
+    }
+    .logo {
+        grid-area: lg;
+    }
+    .navigation {
+        grid-area: nav;
+        margin-bottom: 30px;
+    }
+    .texts {
+        grid-area: tx;
+    }
+    .photo {
+        grid-area: ph;
+    }
+    .photo img {
+        width: 80%;
+    }
+    .copy h1 {
+        color: white;
+        font-size: 17px;
+        font-family:monospace;
+    }
+    .logo img {
+        margin-right: 80px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
